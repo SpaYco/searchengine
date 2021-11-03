@@ -26,7 +26,7 @@ gem 'faker'
 gem 'fuzzy-string-match', '~> 0.9.7'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-
+gem 'batch-loader'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
