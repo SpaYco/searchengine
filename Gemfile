@@ -22,11 +22,11 @@ gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'batch-loader'
 gem 'faker'
 gem 'fuzzy-string-match', '~> 0.9.7'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-gem 'batch-loader'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
