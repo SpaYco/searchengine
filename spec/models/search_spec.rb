@@ -14,12 +14,12 @@ describe 'Searches', type: :feature do
     search = Search.new(session_id: session_id)
     expect(search).to_not be_valid
   end
-  
+
   it 'is not valid if query is less than 3' do
     search = Search.new(query: 'te', session_id: session_id)
     expect(search).to_not be_valid
   end
-  
+
   it 'is not valid if query is more than 50' do
     search = Search.new(query: long_paragraph, session_id: session_id)
     expect(search).to_not be_valid

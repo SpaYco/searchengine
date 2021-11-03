@@ -6,32 +6,31 @@ class ArticleController < ApplicationController
   end
 
   def search
-    articles = Article.where("title LIKE ?", "%#{params[:query]}%")
+    articles = Article.where('title LIKE ?', "%#{params[:query]}%")
     render(partial: 'articles', locals: { articles: articles })
     save_search(params[:query], session[:user_id])
   end
 
   private
-  def save_search(query, session_id)
-    if query == '' || query == nil || query.length < 3
-      search = Search.new(user_params)
-      return
-    end
+
+  def save_search(query, session)
+    return if query.nil? || query.length < 3
+
     recent_search = Search.new(user_params)
-    recent_search.session_id = session_id
-    session_searches = Search.where(session_id: session_id)
+    recent_search.session_id = session
+    session_searches = Search.where(session_id: session)
     if session_searches.empty?
       recent_search.save
       return
     else
       new_search = true
       session_searches.each do |search|
-        if search.searched?(query)
-          new_search = false
-          recent_search = search
-          recent_search.update(query: query)
-          break
-        end
+        next unless search.searched?(query)
+
+        new_search = false
+        recent_search = search
+        recent_search.update(query: query)
+        break
       end
     end
     recent_search.save
@@ -42,8 +41,6 @@ class ArticleController < ApplicationController
   end
 
   def check_session
-    if session[:user_id] == nil
-      session[:user_id] = SecureRandom.urlsafe_base64(16)
-    end
+    session[:user_id] = SecureRandom.urlsafe_base64(16) if session[:user_id].nil?
   end
 end

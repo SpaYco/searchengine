@@ -6,12 +6,12 @@ describe 'Articles', type: :feature do
   before(:each) do |idx|
     50.times do
       Search.create(
-      query: "title#{idx}",
-      session_id: session_id
+        query: "title#{idx}",
+        session_id: session_id
       )
     end
   end
-  
+
   it 'should have a search' do
     visit '/search'
     expect(page).to have_content('Search')
@@ -21,8 +21,8 @@ describe 'Articles', type: :feature do
     100.times do |n|
       2.times do
         Search.create(
-        query: "query#{n}",
-        session_id: session_id
+          query: "query#{n}",
+          session_id: session_id
         )
       end
     end
@@ -36,14 +36,14 @@ describe 'Articles', type: :feature do
     100.times do |n|
       2.times do
         Search.create(
-        query: "query#{n}",
-        session_id: session_id
+          query: "query#{n}",
+          session_id: session_id
         )
       end
     end
-    
+
     Search.create(
-      query: "least_used",
+      query: 'least_used',
       session_id: session_id
     )
     visit '/search'
