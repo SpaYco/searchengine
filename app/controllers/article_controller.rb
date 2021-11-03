@@ -2,11 +2,11 @@ class ArticleController < ApplicationController
   before_action :check_session, only: [:search]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.first(50)
   end
 
   def search
-    articles = Article.where('title LIKE ?', "%#{params[:query]}%")
+    articles = Article.where('title LIKE ?', "%#{params[:query]}%").first(50)
     render(partial: 'articles', locals: { articles: articles })
     save_search(params[:query], session[:user_id])
   end
