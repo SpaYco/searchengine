@@ -18,22 +18,12 @@ class ArticleController < ApplicationController
 
     recent_search = Search.new(user_params)
     recent_search.session_id = session
-    session_searches = Search.where(session_id: session)
-    if session_searches.empty?
+    session_search = Search.where(session_id: session).last
+    if session_search.empty? || !session_search.searched?(query)
       recent_search.save
-      return
-    else
-      new_search = true
-      session_searches.each do |search|
-        next unless search.searched?(query)
-
-        new_search = false
-        recent_search = search
-        recent_search.update(query: query)
-        break
-      end
+    elsif session_search.query.length < query.length
+      session_search.update(query: query)
     end
-    recent_search.save
   end
 
   def user_params
