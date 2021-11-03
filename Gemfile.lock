@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    RubyInline (3.12.5)
+      ZenTest (~> 4.3)
+    ZenTest (4.12.0)
     actioncable (6.1.4.1)
       actionpack (= 6.1.4.1)
       activesupport (= 6.1.4.1)
@@ -83,6 +86,8 @@ GEM
     faker (2.19.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.4-x64-mingw32)
+    fuzzy-string-match (0.9.9)
+      RubyInline (>= 3.8.6)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.10)
@@ -210,6 +215,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   faker
+  fuzzy-string-match (~> 0.9.7)
   jbuilder (~> 2.7)
   pg (~> 1.1)
   puma (~> 5.0)

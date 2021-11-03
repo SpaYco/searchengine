@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>Articles</h1>
 <div>
-  <%= form_with url: article_search_path, method: :get, data: { controller: "search", search_target: "form", turbo_frame: "articles" } do |form| %>
-    <%= form.text_field :title,
+  <%= form_with url: article_search_path, method: :post, authenticity_token: false, data: { controller: "search", search_target: "form", turbo_frame: "articles" } do |form| %>
+    <%= form.text_field :query,
       placeholder: "Search by title",
       autocomplete: "off",
       data: { action: "input->search#search" }
@@ -14,5 +14,5 @@
     <h1><%= article.title %></h1>
     <p><%= article.body %></p>
   <% end %>
-<% end %>
+<% end %> 
 <!-- Snip the table -->
