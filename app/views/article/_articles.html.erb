@@ -11,8 +11,10 @@
 </div>
 <%= turbo_frame_tag "articles" do %>
   <% articles.each do |article| %>
-    <h1><%= article.title %></h1>
-    <p><%= article.body %></p>
+    <div class="article">
+      <h1><%= article.title %></h1>
+      <p><%= article.body %></p>
+    </div>
   <% end %>
-<% end %> 
+<% end %>
 <!-- Snip the table -->

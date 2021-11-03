@@ -1,6 +1,6 @@
-
-<%= render partial: 'search', locals: { searches: @grouped_searches } %>
-
-<h1> Top 10 Searches </h1>
-
-<%= render partial: 'search', locals: { searches: @sorted_searches } %>
+<div id="searches">
+  <h1> Top 100 Searches </h1>
+  <ul id="searches-list">
+    <%= render partial: 'search', locals: { searches: @grouped_searches } %>
+  </ul>
+</div>

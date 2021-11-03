@@ -1,3 +1,39 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#searches {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  #searches-list {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      width: 30%;
+      padding: 5px;
+      font-size: 2.5rem;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #000;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}

@@ -1,3 +1,51 @@
 // Place all the styles related to the Article controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#articles-section {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    color: #000;
+    font-size: 2.5rem;
+  }
+  input {
+    width: 70vw;
+    height: 75px;
+    padding: 5px;
+    font-size: 2.5rem;
+  }
+  #articles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    .article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      width: 45%;
+      padding: 5px;
+      font-size: 2.5rem;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #000;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease-in-out;
+      h1 {
+        font-size: 2.5rem;
+        margin: 15px;
+      }
+      p {
+        font-size: 1.5rem;
+        margin: 15px;
+      }
+      &:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
