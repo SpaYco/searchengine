@@ -1,6 +1,7 @@
 class Search < ApplicationRecord
   validates :query, presence: true
   validates :query, length: { minimum: 3, maximum: 50 }
+  validates :session_id, presence: true
 
   def searched?(search)
     jarow = FuzzyStringMatch::JaroWinkler.create( :native )
