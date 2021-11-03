@@ -23,6 +23,7 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'turbo-rails'
+gem 'stimulus-rails'
 gem 'faker'
 
 # Use Active Storage variant

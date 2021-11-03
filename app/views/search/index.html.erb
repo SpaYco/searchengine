@@ -1,9 +1,0 @@
-<h1>Articles</h1>
-<div>
-  <%= render partial: "search" %>
-  <div>
-    <% @articles.each do |article| %>
-      <%= render partial: "article", locals: { article: article } %>
-    <% end %>
-  </div>
-</div>
