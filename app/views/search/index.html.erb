@@ -1,5 +1,6 @@
-<% @grouped_searches.each do |search, count| %>
 
-<p style="font-size: <%= 25 + count %>px"><%= search %></p>
+<%= render partial: 'search', locals: { searches: @grouped_searches } %>
 
-<% end %>
+<h1> Top 10 Searches </h1>
+
+<%= render partial: 'search', locals: { searches: @sorted_searches } %>
