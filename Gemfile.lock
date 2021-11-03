@@ -80,6 +80,8 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.4-x64-mingw32)
     globalid (0.5.2)
       activesupport (>= 5.0)
@@ -140,6 +142,7 @@ GEM
       rake (>= 0.13)
       thor (~> 1.0)
     rake (13.0.6)
+    redis (4.5.1)
     regexp_parser (2.1.1)
     rexml (3.2.5)
     rubyzip (2.3.2)
@@ -167,6 +170,8 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     tilt (2.0.10)
+    turbo-rails (7.1.1)
+      rails (>= 6.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -202,13 +207,16 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  faker
   jbuilder (~> 2.7)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
+  redis (~> 4.0)
   sass-rails (>= 6)
   selenium-webdriver
+  turbo-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
