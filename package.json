@@ -2,9 +2,12 @@
   "name": "searchengine",
   "private": true,
   "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
+    "@hotwired/turbo-rails": "^7.0.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
+    "@rails/ujs": "^6.1.4",
     "@rails/webpacker": "5.4.3",
     "turbolinks": "^5.2.0",
     "webpack": "4.46.0",
@@ -12,6 +15,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
     "webpack-dev-server": "3"
   }
 }
